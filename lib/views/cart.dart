@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projectpos/card/cardcart.dart';
 import 'package:projectpos/card/cardmenu.dart';
 
 class Cart extends StatefulWidget {
@@ -31,6 +32,7 @@ class _CartState extends State<Cart> {
                   margin: EdgeInsets.only(top:17.0,right: 29.0,left: 29.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.0),
+                    color: Colors.white,
                     border: Border.all(color: Color.fromRGBO(80,171,255,1),width: 1.0),
                     boxShadow: [
                       BoxShadow(
@@ -42,11 +44,6 @@ class _CartState extends State<Cart> {
                     ],
 
                   ),
-                  child: Container(
-                    decoration:BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.0),
-                      color: Colors.white
-                    ) ,
                     padding: EdgeInsets.symmetric(horizontal: 14.0),
                     child: TextField(
                       maxLines: 1,
@@ -56,8 +53,8 @@ class _CartState extends State<Cart> {
                         border: InputBorder.none,
                       ),
                     ),
-                  )
-                ),
+                  ),
+
                 SizedBox(height:17.0,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 29.0),
@@ -74,11 +71,11 @@ class _CartState extends State<Cart> {
                       itemCount: 4,
                         itemBuilder: (context,index){
                           if(index!=0){
-                            return CardMenu(image: 'images/sop.png',nama: 'Sop Telur Jamur',harga: '22.000',stok: 9,);
+                            return CardCart(image: 'images/sop.png',nama: 'Sop Telur Jamur',harga: '22.000',stok: 9,);
                           }
                           return Padding(
                             padding: const EdgeInsets.only(top: 28.0),
-                            child: CardMenu(image: 'images/sop.png',nama: 'Sop Telur Jamur',harga: '22.000',stok: 0,),
+                            child: CardCart(image: 'images/sop.png',nama: 'Sop Telur Jamur',harga: '22.000',stok: 0,),
                           );
                         }
                     )
